@@ -1,0 +1,46 @@
+#python
+#Lyza's word counter
+import collections
+import re
+
+def count():
+	y = "C:\\Users\\Gregory\\Desktop\\Python test stuff\\test.txt"
+	array = {}
+	sorted_array = {}
+	inv_sorted = {}
+	with open(y, mode = "r") as f:
+		for line in f:
+			for word in line.split():
+				flag = True
+				for key in array:
+					if key == word:
+						flag = False
+
+				if flag:
+					array[word] =  1
+				else:
+					array[word] += 1
+
+    
+
+	sorted_array = sorted(array.items(), key=lambda x:x[1])
+	string = "report.txt"
+
+	thing = open(string, "w")
+
+	thing.write("Word used , times used\n")
+	for key in sorted_array:
+		something = str(key) + "\n"
+		#something = "" + str(key) + ": " + str(sorted_array[key]) + "\n" 
+		thing.write(something)
+
+	thing.close()
+
+
+def main():
+	count()
+	
+
+
+if __name__ =='__main__':
+	main()
