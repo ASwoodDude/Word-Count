@@ -1,5 +1,5 @@
 #python
-#Lyza's word counter
+
 import collections
 import re
 
